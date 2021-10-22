@@ -37,6 +37,14 @@ body {
     padding-bottom: 13px;
 }
 
+/*Убрать крестик, который стирает всю запись в поисковике*/
+.search-input::-webkit-search-decoration,  
+.search-input::-webkit-search-cancel-button, 
+.search-input::-webkit-search-results-button, 
+.search-input::-webkit-search-results-decoration {
+	display: none;
+}
+
 .auth {
     margin-left: auto;
 }
