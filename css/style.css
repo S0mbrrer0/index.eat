@@ -23,6 +23,7 @@ body {
     border-radius: 10px;
     display: flex;
     max-width: 620px;
+    width: 100%;
     flex-grow: 1;
     position: relative;
 }
@@ -32,17 +33,17 @@ body {
     border: none;
     width: 100%;
     padding-left: 20px;
-    padding-right: 20px; 
+    padding-right: 20px;
     padding-top: 13px;
     padding-bottom: 13px;
 }
 
 /*Убрать крестик, который стирает всю запись в поисковике*/
-.search-input::-webkit-search-decoration,  
-.search-input::-webkit-search-cancel-button, 
-.search-input::-webkit-search-results-button, 
+.search-input::-webkit-search-decoration,
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-results-button,
 .search-input::-webkit-search-results-decoration {
-	display: none;
+    display: none;
 }
 
 .auth {
@@ -98,12 +99,12 @@ body {
 
 .slide {
     position: relative;
-    border-radius: 20px;
-    overflow: hidden;
     min-height: 400px;
     display: flex;
     align-items: center;
-    padding: 100px; 
+    padding: 100px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .slide-text-light {
@@ -113,7 +114,29 @@ body {
 
 .slide-content {
     position: relative;
-    max-width: 400px;
+    max-width: 500px;
+}
+
+.slider-buttons{
+    position: absolute;
+    right: 46px;
+    bottom: 40px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    justify-content: space-between;
+}
+
+.slider-button {
+    cursor: pointer
+}
+
+.swiper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
 }
 
 .slide-title {
@@ -158,6 +181,18 @@ body {
     background-size: cover;
 }
 
+.slide-autumn {
+    background-image: url("../img/autumn.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide-vitamin {
+    background-image: url("../img/vitamin.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .slide::before {
     content: "";
     position: absolute;
@@ -189,7 +224,7 @@ body {
     width: 100%;
     min-height: 380px;
     display: flex;
-    flex-direction: column;             
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -305,8 +340,8 @@ body {
 }
 
 .tag-meat {
-    background: #B86B78;   
-    color: #FFFFFF; 
+    background: #B86B78;
+    color: #FFFFFF;
 }
 
 .tag-poultry {
@@ -342,8 +377,7 @@ body {
 
 .tabs-content {
     display: flex;
-    margin: -15px;
-    
+    justify-content: space-between;
 }
 
 .tabs {
@@ -352,7 +386,7 @@ body {
     margin-bottom: 62px;
     padding: 0;
     list-style: none;
-    
+
 }
 
 .tabs-link {
@@ -373,7 +407,6 @@ body {
     overflow: hidden;
     background: #fff;
     position: relative;
-    margin: 15px;
 }
 
 .tabs-image {
@@ -443,9 +476,10 @@ body {
 
 .advantage-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin: -18.5px;
     margin-bottom: 202px;
+    max-width: 1191px;
 }
 
 .advantage-title {
@@ -461,17 +495,20 @@ body {
     margin-top: 30px;
     margin-bottom: 34px;
 }
+
 .advantage-card {
     max-width: 270px;
-    max-height: 296px;
+    width: 100%;
+    /* max-height: 296px; */
     background: #FFFFFF;
     border: 1px solid #E9E9E9;
     box-sizing: border-box;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
     border-radius: 18px;
     text-align: center;
-    margin: 18.5px;
+    padding-right: 18.5px;
 }
+
 .advantage-name {
     font-weight: 500;
     font-size: 16px;
@@ -523,4 +560,91 @@ body {
 .social-link {
     margin-left: 20px;
     text-decoration: none;
+}
+
+@media (max-width: 1260px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .search-form {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .tabs-content {
+        flex-wrap: wrap;
+    }
+
+    .tabs-card {
+
+        max-width: calc(50% - 30px);
+    }
+    
+    .advantage-card {
+        max-width: calc(50% - 30px);
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+
+    .slide {
+        padding: 70px;
+    }
+
+    .delivery-card {
+        width: calc(50% - 30px);
+    }
+    
+    .footer-logo {
+        margin-right: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 560px;
+    }
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .search-form {
+        order: 5;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .promo {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .delivery-card, 
+    .tabs-card, 
+    .advantage-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .slide {
+        padding: 50px;
+    }
+
+    .slider-buttons {
+        right: 10px;
+        bottom: 10px;
+    }
 }
